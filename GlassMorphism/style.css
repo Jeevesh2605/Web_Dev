@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    
+
+
+}
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 40vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    text-align: center;
+    border-radius: 20px;
+    cursor: grab;
+    backdrop-filter: blur(10px);
+    box-shadow: insert 0 0 20px 0px rgba(243, 240, 240, 0.1),
+    0px 0px 30px 0px rgba(255, 255, 255, 0.6)  ;
+    transition: box-shadow 0.2s ease;
+    user-select: none;
+}
+.cards:active{
+    cursor: grabbing;
+    box-shadow: 0 0 30px white;
+}
+
+.cards::after {
+    content: "Double-click to learn more";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 12px;
+    color: #fff9f9;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.cards:hover::after {
+    opacity: 1;
+}
+.cards.clicked {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+
+.img{
+    width: 90%;
+    height: 50%;
+    position: absolute;
+    top: 5%;
+    
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+p{
+    color: white;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 250;
+    font-style: normal;
+}
